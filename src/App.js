@@ -1,15 +1,19 @@
 /* eslint-disable */
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import logo from "./images/logo.png";
-import Login from "./component/Login.js";
-import {Routes, BrowserRouter,  Route, Link} from "react-router-dom"
+import Login from "./component/Login";
+import Chat from "./component/Chat";
+import Ask from "./component/Ask";
+import Mypage from './component/Mypage';
+import Writing from './component/Writing';
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <div className="logoWrap">
-          <img src={logo} className="logoImg" />
+          <img src={ logo } className="logoImg" />
       </div>
 
       <div className="titleWrap">
@@ -21,21 +25,33 @@ function App() {
       </div>
 
       <div className='navWrap'>
-        <BrowserRouter>
-          <button className='button'><Link to="/login">로그인</Link></button>
 
-          <button className='button'><a>마이페이지</a></button>
-
-          <button className='button'><a>게시물작성</a></button>
-
-          <button className='button'><a>채팅</a></button>
-
-          <button className='button'><a>문의하기</a></button>
-
+          <button className='button'>
+            <Link to="/login">로그인</Link>
             <Routes>
-              <Route path='/login' element={ <Login /> } />
-            </Routes>
-        </BrowserRouter>
+  <Route path='/login' element={ <Login /> } />
+  <Route path='/mypage' element={ <Mypage /> } />
+  <Route path='/writing' element={ <Writing /> } />
+  <Route path='/chat' element={ <Chat /> } />
+  <Route path='/ask' element={ <Ask /> } />
+</Routes>
+          </button>
+
+          <button className='button'>
+            <Link to="/mypage">마이페이지</Link>
+          </button>
+
+          <button className='button'>
+            <Link to="/writing">게시물작성</Link>
+          </button>
+
+          <button className='button'>
+            <Link to="/chat">채팅</Link>
+          </button>
+
+          <button className='button'>
+            <Link to="/ask">문의하기</Link>
+          </button>
       </div>
     </div>
   );

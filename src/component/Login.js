@@ -1,13 +1,22 @@
 /* eslint-disable */
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 
-const Login = () => {
-    return(
-        <div className="Login">
-            
-        </div>
-    )
+class Login extends React.Component {
+    render() {
+        return(
+            <div className="Login">
+                <div>
+                <Routes>
+  <Route path='/login' element={ <Login /> } />
+  <Route path='/mypage' element={ <Mypage /> } />
+  <Route path='/writing' element={ <Writing /> } />
+  <Route path='/chat' element={ <Chat /> } />
+  <Route path='/ask' element={ <Ask /> } />
+</Routes>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Login;

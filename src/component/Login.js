@@ -6,13 +6,7 @@ class Login extends React.Component {
         return(
             <div className="Login">
                 <div>
-                <Routes>
-  <Route path='/login' element={ <Login /> } />
-  <Route path='/mypage' element={ <Mypage /> } />
-  <Route path='/writing' element={ <Writing /> } />
-  <Route path='/chat' element={ <Chat /> } />
-  <Route path='/ask' element={ <Ask /> } />
-</Routes>
+                    
                 </div>
             </div>
         )

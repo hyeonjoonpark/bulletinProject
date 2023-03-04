@@ -1,43 +1,45 @@
 /* eslint-disable */
 import './App.css';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import React from 'react';
+import React, { useState } from 'react';
 import logo from "./images/logo.png";
-import Login from "./component/Login";
-import Chat from "./component/Chat";
-import Ask from "./component/Ask";
-import Mypage from './component/Mypage';
-import Writing from './component/Writing';
 import Nav from './component/Nav.js'
 
+function Modal(){
+  return (
+      <div className="IntroModal">
+        <h1>* About *</h1>
+        <p>자신의 일상과 서로의 지식을 공유하는 복합 사이트</p><br/><hr/>
+        <br/>
+        <h1>* Warning *</h1>
+        <p>1.욕설, 패드립 등 불필요한 말은 삼가해주세요</p>
+        <p>2.신고접수 시 계정이 정지 될 수 있습니다</p><br/><hr/>
+        <br/>
+        <h1>* etc *</h1>
+        <p>즐거운 사용바랍니다</p>
+        <p>문제 발생시 문의하기를 눌러주시기 바랍니다</p>
+      </div>
+  )
+}
+
 function App() {
+  let [modal, setModal] = useState(false);
   return (
     <div className="App">
-      <BrowserRouter>
         <Nav />
-        <Switch>
-          <Route exact path="/login" component={ Login } />
-          <Route exact path="/mypage" component={ Mypage } />
-          <Route exact path="/writing" component={ Writing } />
-          <Route exact path="/chat" component={ Chat } />
-          <Route exact path="/ask" component={ Ask } />
-        </Switch>
-      </BrowserRouter>
+
         <div className="logoWrap">
             <img src={ logo } className="logoImg" />
         </div>
 
         <div className="titleWrap">
-          <a>The Best board of today</a>
+          <a>About The Don't Worry</a>
         </div>
 
         <div className="boardWrap">
-          Hello Dis is a BoardWrap.
+          <button className='modalBtn' onClick={ () => { setModal(!modal) } }>Intro</button>
+          {
+            modal === true ? <Modal /> : null
+          }
         </div>
     </div>
   );

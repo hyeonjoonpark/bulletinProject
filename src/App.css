@@ -80,12 +80,14 @@ div a:link, div a:hover, div a:visited {
 .modalBtn {
   margin-top: 15px;
   font-size: 25px;
-}
-
-.modalBtn {
   background: rgba(21, 23, 30, 0.8);
   color: white;
   font-weight: bold;
-  width: 80px;
+  width: 180px;
   height: 40px;
+  margin-top: 50px;
+}
+
+.introModal {
+  text-align: center;
 }

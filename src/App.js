@@ -6,13 +6,14 @@ import Nav from './component/Nav.js'
 
 function Modal(){
   return (
-      <div className="IntroModal">
+      <div className="introModal">
+        <br/>
         <h1>* About *</h1>
-        <p>자신의 일상과 서로의 지식을 공유하는 복합 사이트</p><br/><hr/>
+        <p>자신의 일상과 서로의 지식을 공유하는 복합 사이트</p><br/>
         <br/>
         <h1>* Warning *</h1>
         <p>1.욕설, 패드립 등 불필요한 말은 삼가해주세요</p>
-        <p>2.신고접수 시 계정이 정지 될 수 있습니다</p><br/><hr/>
+        <p>2.신고접수 시 계정이 정지 될 수 있습니다</p><br/>
         <br/>
         <h1>* etc *</h1>
         <p>즐거운 사용바랍니다</p>
@@ -36,7 +37,7 @@ function App() {
         </div>
 
         <div className="boardWrap">
-          <button className='modalBtn' onClick={ () => { setModal(!modal) } }>Intro</button>
+          <button className='modalBtn' onClick={ () => { setModal(!modal) } }>INTRODUCE</button>
           {
             modal === true ? <Modal /> : null
           }

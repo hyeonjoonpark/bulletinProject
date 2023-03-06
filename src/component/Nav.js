@@ -6,35 +6,26 @@ import Mypage from './Mypage.js'
 import Writing from './Writing.js'
 import Chat from './Chat.js'
 import Ask from './Ask.js'
+import { REDIRECT_URI, REST_API_KEY } from "../important/Key.js";
+import kakaoLogin from '../server/KakaoLogin';
 
 function Nav() {
+    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    const handleLogin = () => {
+        window.location.href = KAKAO_AUTH_URL;
+    }
   return (
     <>
         <div className='navWrap'>
-            <nav>
-                <Link to="/login">
-                    <button className='button'>로그인</button>
-                </Link>
+            <nav>  
+                <button className='button' onClick={handleLogin}>로그인</button>
+                <button className='button' onClick={() => {
+                    window.open('/mypage', <Mypage/>, "mypage")
+                }}>마이페이지</button>
+                <button className='button'>게시물작성</button>
+                <button className='button'>채팅</button>
+                <button className='button'>문의하기</button>
 
-            
-                <Link to="/mypage">
-                    <button className='button'>마이페이지</button>
-                </Link>
-
-            
-                <Link to="/writing">
-                    <button className='button'>게시물작성</button>
-                </Link>
-
-            
-                <Link to="/chat">
-                    <button className='button'>채팅</button>
-                </Link>
-
-            
-                <Link to="/ask">
-                    <button className='button'>문의하기</button>
-                </Link>
             </nav>
 
             <Routes>

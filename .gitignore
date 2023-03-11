@@ -24,3 +24,6 @@ yarn-error.log*
 
 # secret
 /important
+
+# .gitignore
+/src/important/.Key

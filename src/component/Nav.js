@@ -10,7 +10,8 @@ import { REDIRECT_URI, REST_API_KEY } from "../important/Key.js";
 import kakaoLogin from '../server/KakaoLogin';
 
 function Nav() {
-    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    const KAKAO_AUTH_URL = 
+    `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
     const handleLogin = () => {
         window.location.href = KAKAO_AUTH_URL;
     }
@@ -19,22 +20,11 @@ function Nav() {
         <div className='navWrap'>
             <nav>  
                 <button className='button' onClick={handleLogin}>로그인</button>
-                <button className='button' onClick={() => {
-                    window.open('/mypage', <Mypage/>, "mypage")
-                }}>마이페이지</button>
+                <button className='button'>마이페이지</button>
                 <button className='button'>게시물작성</button>
                 <button className='button'>채팅</button>
                 <button className='button'>문의하기</button>
-
             </nav>
-
-            <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/login" element={<Mypage />} />
-                <Route path="/login" element={<Writing />} />
-                <Route path="/login" element={<Chat />} />
-                <Route path="/login" element={<Ask />} />
-            </Routes>
         </div>
     </>
   );
